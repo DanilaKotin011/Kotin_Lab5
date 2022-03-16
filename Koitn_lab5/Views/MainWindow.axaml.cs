@@ -42,7 +42,7 @@ namespace Koitn_lab5.Views
         {
             var w = new RegexWindow();
             w.DataContext = this.DataContext as MainWindowViewModel;
-            w.Show((Window)this.VisualRoot);
+            w.ShowDialog((Window)this.VisualRoot);
         }
     }
 }
