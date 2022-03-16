@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Koitn_lab5.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+        x:Class="Koitn_lab5.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Koitn_lab5"
+		Width="450" Height="450">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid ShowGridLines="False">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="40"/>
+			<RowDefinition Height="40"/>
+		</Grid.RowDefinitions>
+		<TextBox Text="{Binding TextIn}" AcceptsReturn="True" TextWrapping="Wrap" Grid.Column="0" Grid.Row="0" Height="370" Width="225"/>
+		<TextBox Text="{Binding TextOut}" AcceptsReturn="True" TextWrapping="Wrap" Focusable="False" Grid.Column="1" Grid.Row="0" Height="370" Width="225"/>
+		<Button Name="OpenFileButton" Content="Open File" HorizontalContentAlignment="Center" Grid.Column="0" Grid.Row="1" Height="40" Width="225"/>
+		<Button Name="SaveFileButton" Content="Save File" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Height="40" Width="225"/>
+		<Button Name="SetRegexButton" Click="MyClickEventHandler" Content="Set Regex" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="1" Grid.Column="0" Grid.Row="2"  Height="40" Width="450"/>
+	</Grid>
+
+</Window>
